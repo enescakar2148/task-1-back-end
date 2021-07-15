@@ -12,4 +12,5 @@ public interface StoryRepo extends CrudRepository<Stories, Integer> {
     Stories save(Stories story);
     Stories findByStoryId(int storyId);
     ArrayList<Stories> findAll();
+    //boolean remove(int storyId);
 }

@@ -15,14 +15,17 @@ public class StoryService {
     @Autowired
     private StoryRepo storyRepo;
 
-    public Stories uploadMetadataOfStory(Stories story){
+    public Stories uploadStory(Stories story){
         return storyRepo.save(story);
     }
 
-    public Stories displayStoriesMetaData(int storyId){
+    public Stories displayStoriesForUser(int storyId){
         return storyRepo.findByStoryId(storyId);
     }
     public ArrayList<Stories> getAllStories(){
         return storyRepo.findAll();
     }
+    /*public boolean deleteStory(int storyId){
+        return storyRepo.remove(storyId);
+    }*/
 }

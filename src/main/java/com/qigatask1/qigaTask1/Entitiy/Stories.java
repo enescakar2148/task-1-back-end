@@ -1,7 +1,6 @@
 package com.qigatask1.qigaTask1.Entitiy;
 
 import com.sun.istack.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,28 +20,8 @@ public class Stories {
     private String storyImageURL;
     private int storyId;
 
-    public Stories() {
-    }
-
-    public Stories(int id, String userName, String userId,  int storyId, Timestamp timestamp, String storyImageURL) {
-        this.id = id;
-        this.userId = userId;
-        this.storyId = storyId;
-        this.userName = userName;
-        this.timestamp = timestamp;
-        this.storyImageURL = storyImageURL;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public int getStoryId() {
-        return storyId;
-    }
-
-    public void setStoryId(int storyId) {
-        this.storyId = storyId;
     }
 
     public void setId(int id) {
@@ -79,5 +58,13 @@ public class Stories {
 
     public void setStoryImageURL(String storyImageURL) {
         this.storyImageURL = storyImageURL;
+    }
+
+    public int getStoryId() {
+        return storyId;
+    }
+
+    public void setStoryId(int storyId) {
+        this.storyId = storyId;
     }
 }

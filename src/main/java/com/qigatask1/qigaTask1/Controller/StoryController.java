@@ -24,11 +24,17 @@ public class StoryController {
     @GetMapping("/{storyId}")
     private Stories getStory(@PathVariable("storyId") int storyId){
         //bir kullanıcıya ait storyi getirir
-        return storyService.displayStoriesMetaData(storyId);
+        return storyService.displayStoriesForUser(storyId);
     }
 
     @PostMapping("/new")
     private Stories newStory(@RequestBody Stories stories){
-        return storyService.uploadMetadataOfStory(stories);
+        //Yeni hikaye yükler
+        return storyService.uploadStory(stories);
     }
+    /*
+    @DeleteMapping("/del/{storyId}")
+    private boolean deleteStory(@PathVariable("storyId") int stroyId){
+        return storyService.deleteStory(stroyId);
+    }*/
 }
