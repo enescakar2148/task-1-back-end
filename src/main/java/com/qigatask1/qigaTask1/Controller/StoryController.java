@@ -8,22 +8,23 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/stories") //domainde gelen isteklerden /stories query'sine cevap verir
+@RequestMapping("/api/stories") //domainde gelen isteklerden /stories query'sine cevap verir
 //örnek: https://localhost:8080/api/stories
 public class StoryController {
 
     @Autowired
     private StoryService storyService;
 
-    @GetMapping("")
+    @GetMapping("/all-stories")
     private ArrayList<Stories> getAll(){
         //Tüm Hikayeleri Liste İçinde Getirir
-        return null;
+        return storyService.getAllStories();
     }
 
-    @GetMapping("/{userId}")
-    private Stories getStory(@PathVariable("userId") String userId){
-        return storyService.displayStoriesMetaData(userId);
+    @GetMapping("/{storyId}")
+    private Stories getStory(@PathVariable("storyId") int storyId){
+        //bir kullanıcıya ait storyi getirir
+        return storyService.displayStoriesMetaData(storyId);
     }
 
     @PostMapping("/new")
