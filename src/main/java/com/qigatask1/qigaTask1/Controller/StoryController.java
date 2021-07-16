@@ -15,14 +15,14 @@ public class StoryController {
     @Autowired
     private StoryService storyService;
 
-    @GetMapping("/all-stories")
+    @GetMapping("")
     private ArrayList<Stories> getAll(){
         //Tüm Hikayeleri Liste İçinde Getirir
         return storyService.getAllStories();
     }
 
     @GetMapping("/{storyId}")
-    private Stories getStory(@PathVariable("storyId") int storyId){
+    private Stories getStory(@PathVariable("storyId") String storyId){
         //bir kullanıcıya ait storyi getirir
         return storyService.displayStoriesForUser(storyId);
     }
@@ -32,9 +32,4 @@ public class StoryController {
         //Yeni hikaye yükler
         return storyService.uploadStory(stories);
     }
-    /*
-    @DeleteMapping("/del/{storyId}")
-    private boolean deleteStory(@PathVariable("storyId") int stroyId){
-        return storyService.deleteStory(stroyId);
-    }*/
 }

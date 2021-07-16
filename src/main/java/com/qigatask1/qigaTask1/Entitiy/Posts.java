@@ -8,22 +8,22 @@ import javax.persistence.Id;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-@Entity(name="Stories")
-public class Stories {
+@Entity(name = "Posts")
+public class Posts {
 
     @Id
-    @GeneratedValue //otomatik olarak atanacağını belirtir
+    @GeneratedValue
     private int id;
 
     @NotNull
     private String userName;
     private String userId;
+    private String photoUrl;
     private Timestamp timestamp;
-    private String storyImageURL;
-    private String storyId;
+    private String postId;
 
-    public Stories() {
-        this.storyId = UUID.randomUUID().toString();
+    public Posts() {
+        this.postId = UUID.randomUUID().toString();
     }
 
     public int getId() {
@@ -50,6 +50,14 @@ public class Stories {
         this.userId = userId;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
     public Timestamp getTimestamp() {
         return timestamp;
     }
@@ -58,19 +66,11 @@ public class Stories {
         this.timestamp = timestamp;
     }
 
-    public String getStoryImageURL() {
-        return storyImageURL;
+    public String getPostId() {
+        return postId;
     }
 
-    public void setStoryImageURL(String storyImageURL) {
-        this.storyImageURL = storyImageURL;
-    }
-
-    public String getStoryId() {
-        return storyId;
-    }
-
-    public void setStoryId(String storyId) {
-        this.storyId = storyId;
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 }

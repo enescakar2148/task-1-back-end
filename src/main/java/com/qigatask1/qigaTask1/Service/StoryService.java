@@ -19,13 +19,10 @@ public class StoryService {
         return storyRepo.save(story);
     }
 
-    public Stories displayStoriesForUser(int storyId){
+    public Stories displayStoriesForUser(String storyId){
         return storyRepo.findByStoryId(storyId);
     }
     public ArrayList<Stories> getAllStories(){
         return storyRepo.findAll();
     }
-    /*public boolean deleteStory(int storyId){
-        return storyRepo.remove(storyId);
-    }*/
 }
