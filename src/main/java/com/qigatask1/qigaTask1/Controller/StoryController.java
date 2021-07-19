@@ -10,6 +10,7 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/api/stories") //domainde gelen isteklerden /stories query'sine cevap verir
 //örnek: https://localhost:8080/api/stories
+@CrossOrigin(origins = "http://localhost:3000")
 public class StoryController {
 
     @Autowired
