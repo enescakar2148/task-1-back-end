@@ -21,6 +21,15 @@ public class Posts {
     private String photoUrl;
     private Timestamp timestamp;
     private String postId;
+    private String ppUrl;
+
+    public String getPpUrl() {
+        return ppUrl;
+    }
+
+    public void setPpUrl(String ppUrl) {
+        this.ppUrl = ppUrl;
+    }
 
     public Posts() {
         this.postId = UUID.randomUUID().toString();

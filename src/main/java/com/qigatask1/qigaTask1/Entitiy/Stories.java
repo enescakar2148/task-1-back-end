@@ -21,6 +21,15 @@ public class Stories {
     private Timestamp timestamp;
     private String storyImageURL;
     private String storyId;
+    private String ppImageURL;
+
+    public String getPpImageURL() {
+        return ppImageURL;
+    }
+
+    public void setPpImageURL(String ppImageURL) {
+        this.ppImageURL = ppImageURL;
+    }
 
     public Stories() {
         this.storyId = UUID.randomUUID().toString();
