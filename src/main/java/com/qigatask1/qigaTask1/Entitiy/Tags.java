@@ -16,6 +16,15 @@ public class Tags {
     @NotNull
     private String userId;
     private String userName;
+    private String postId;
+
+    public String getPostId() {
+        return postId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
+    }
 
     public int getId() {
         return id;
